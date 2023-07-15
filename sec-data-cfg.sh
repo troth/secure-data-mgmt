@@ -11,6 +11,5 @@ then
 fi
 
 IMG="sec-data.img"
-LOOP="$(ls -1 /dev/loop[0-9]* | sort -V | tail -1)"
 MNT_PT="/sec-data"
 SIZE_MB=1000
