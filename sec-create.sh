@@ -7,7 +7,7 @@
 
 if [ -f "${IMG}" ]
 then
-    # Don't wnat to clobber an existing file.
+    # Don't want to clobber an existing file.
     echo "ERROR: Image file already exists: ${IMG}"
     exit 1
 fi
