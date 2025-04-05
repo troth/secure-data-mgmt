@@ -29,7 +29,7 @@ dd if=/dev/urandom of=${IMG} bs=1M count=${SIZE_MB} || exit 1
 
 LOOP=$(losetup --find --show ${IMG})
 test -n "${LOOP}" && {
-    cryptsetup luksFormat --type luks2 "${CIPHER[@]}" -y ${LOOP} && {
+    cryptsetup luksFormat --type luks2 --pbkdf argon2id "${CIPHER[@]}" -y ${LOOP} && {
         cryptsetup luksOpen ${LOOP} ${IMG} && {
             mkfs.ext4 /dev/mapper/${IMG}
             sync
